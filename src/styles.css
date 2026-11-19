@@ -112,7 +112,6 @@ body { background: var(--or-ground); }
 .or-nav-box span:last-child { background: var(--or-ink); color: var(--or-ground); transition: background .25s; }
 .or-nav-box:hover span:last-child, .or-nav-box:focus-visible span:last-child { background: var(--or-accent); }
 .or-nav-box:focus-visible { outline: none; }
-@media (max-width: 560px) { .or-nav-box span:first-child { display: none; } }
 .or-btn-primary { font-weight: 800; border-radius: 0; }
 .or-btn-text { font-weight: 700; }
 

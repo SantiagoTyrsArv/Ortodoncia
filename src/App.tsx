@@ -163,7 +163,6 @@ export default function App() {
           {SITE_NAME}
         </a>
         <a className="or-nav-box" href="#descargas">
-          <span>{SITE_NAME}</span>
           <span>Descargar</span>
         </a>
       </header>

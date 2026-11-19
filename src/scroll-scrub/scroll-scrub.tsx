@@ -633,19 +633,21 @@ export function ScrollScrub({
           <span />
         </div>
 
-        <nav aria-label="Scroll chapters" className="scroll-scrub__route">
-          {scenes.map((scene, index) => (
-            <button
-              aria-current={activeSection === index ? "step" : undefined}
-              className="scroll-scrub__route-button"
-              key={scene.id}
-              onClick={() => controllerRef.current?.jumpToSection(index)}
-              type="button"
-            >
-              <span>{scene.label}</span>
-            </button>
-          ))}
-        </nav>
+        {scenes.length > 1 ? (
+          <nav aria-label="Scroll chapters" className="scroll-scrub__route">
+            {scenes.map((scene, index) => (
+              <button
+                aria-current={activeSection === index ? "step" : undefined}
+                className="scroll-scrub__route-button"
+                key={scene.id}
+                onClick={() => controllerRef.current?.jumpToSection(index)}
+                type="button"
+              >
+                <span>{scene.label}</span>
+              </button>
+            ))}
+          </nav>
+        ) : null}
       </div>
 
       <div className="scroll-scrub__story">

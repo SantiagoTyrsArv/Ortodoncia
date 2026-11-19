@@ -115,3 +115,21 @@ body { background: var(--or-ground); }
 @media (max-width: 560px) { .or-nav-box span:first-child { display: none; } }
 .or-btn-primary { font-weight: 800; border-radius: 0; }
 .or-btn-text { font-weight: 700; }
+
+/* ---- visual fixes ---- */
+/* Fixed nav: fade the content scrolling underneath so it never collides with the wordmark. */
+.or-nav { background: linear-gradient(to bottom, rgba(10,34,41,.94) 0%, rgba(10,34,41,.7) 55%, rgba(10,34,41,0) 100%); padding-bottom: 40px; }
+/* Feather image edges so their darker backdrop blends into the page instead of showing a box. */
+.or-panel img, .or-phone-pin img {
+  border-radius: 0;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, #000 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 50% at center, #000 62%, transparent 100%);
+}
+/* Phone: keep aspect ratio on narrow screens (max-width:100% was squashing it). */
+.or-phone-pin img { height: auto; width: auto; max-height: 86svh; max-width: 92vw; }
+/* Mobile panels: no full-screen empty bands, larger images, tag close to its image. */
+@media (max-width: 899px) {
+  .or-panel { min-height: auto; padding: 48px 22px 76px; }
+  .or-panel img { width: 100%; max-width: 520px; }
+  .or-panel-tag { left: 22px; bottom: 28px; }
+}

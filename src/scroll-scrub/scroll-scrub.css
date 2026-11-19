@@ -2,6 +2,8 @@
   --ss-progress: 0;
   position: relative;
   isolation: isolate;
+  /* clip (not hidden) so the sticky stage keeps working; stops the copy glow from causing horizontal scroll */
+  overflow-x: clip;
   color: var(--ss-ink);
   background: var(--ss-bg);
 }
